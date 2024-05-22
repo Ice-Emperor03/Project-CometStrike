@@ -1,4 +1,5 @@
 import subprocess
+import random
 
 
 class WiFiHacker:
@@ -10,6 +11,7 @@ class WiFiHacker:
         self.channelnum = None
         self.order = None
         self.cmd = None
+        self.new_mac = None
 
     # Banner to display menu options
     @staticmethod
@@ -32,8 +34,9 @@ class WiFiHacker:
           [5] Deauthenticate Network Devices
           [6] Deauthenticate WiFi Router
         ----- Other Features -----  
-          [7] Switch Monitoring Channel                    
-          [8] About
+          [7] Switch Monitoring Channel  
+          [8] Change MAC Address *IMPORTANT*                  
+          [9] About
           [0] Exit
         """)
 
@@ -102,7 +105,7 @@ class WiFiHacker:
         except subprocess.CalledProcessError:
             print("Error: Failed to deauthenticate network devices.")
 
-    # Deauthenticate WiFi router
+    # Deauthenticate Wi-Fi router
     def deauth_router(self):
         self.bssid = input("\nEnter the bssid of the target > ")
         self.interface = input("\nEnter the interface: ")
@@ -155,6 +158,22 @@ for your own actions and agree to use this tool ethically and responsibly.
 """)
         input("Press Enter to return to the main menu...")
 
+    # Change MAC address
+    def changemac(self):
+        self.interface = input("\nEnter the interface (e.g., eth0, wlan0): ")
+        while True:
+            color_code = ':'.join([('0' + hex(random.randint(0, 256))[2:])[-2:].upper() for _ in range(6)])
+            first_byte = int(color_code.split(':')[0], 16)
+            if first_byte % 2 == 0:
+                even_color_code = color_code
+                break
+
+        print("[+] Successfully changed MAC address for " + self.interface + " to " + even_color_code +"\n")
+        subprocess.call(["sudo", "ifconfig", self.interface, "down"])
+        subprocess.call(["sudo", "ifconfig", self.interface, "hw", "ether", even_color_code])
+        subprocess.call(["sudo", "ifconfig", self.interface, "up"])
+        input("\nPress Enter to return to the main menu...")
+
 
 # Main script
 if __name__ == "__main__":
@@ -180,6 +199,8 @@ if __name__ == "__main__":
             elif var == 7:
                 wifi_hacker.switch_channel()
             elif var == 8:
+                wifi_hacker.changemac()
+            elif var == 9:
                 wifi_hacker.credits()
             elif var == 0:
                 print("\n\nExiting Program...")
