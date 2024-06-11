@@ -1,3 +1,6 @@
+![Project CS](https://github.com/Ice-Emperor03/Project_CometStrike/assets/128063701/53fc0e06-cbee-4c8e-b0d9-70f065a374b0)
+
+
 # CometStrike
 
 WARNING: Ethical Use of Project CometStrike
@@ -7,14 +10,8 @@ is strictly prohibited to use this tool to gain unauthorized access to computer 
 in any harmful actions. By using Project Comet Strike, you acknowledge that you are responsible for your own actions 
 and agree to use this tool ethically and responsibly.
 
-# Features
-
-Assistance Features: Start/Stop Monitor mode, Switch Monitoring Channel
-Information Gathering: Scan surrounding Networks or devices on a particular Network
-Deauthentication: Kick every device off the Network or just a particular device
-Cover your tracks: Generate a random MAC address and change the current one
 
 # Set Up
 
-Kali Linux VM (needs to run the script as the root user)
-Network Adapter which supports monitor mode (TP-link TI-wn722n)
+1. Kali Linux VM (script requires root privileges)
+2. Network Adapter which supports monitor mode (TP-link TL-WN722N)
