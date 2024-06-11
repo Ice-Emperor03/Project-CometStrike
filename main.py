@@ -27,15 +27,15 @@ class WiFiHacker:
 
         ----- Basic Function -----
           [1] Start monitor mode       
-          [2] Stop monitor mode                        
-          [3] Scan Networks
+          [2] Stop monitor mode       
+          [3] Switch Monitoring Channel                  
+          [4] Scan Networks
         ----- Deauth Attacks -----                            
-          [4] Scan for Devices on Network (Need Monitor mode)                      
-          [5] Deauthenticate Network Devices
-          [6] Deauthenticate WiFi Router
+          [5] Scan for Devices on Network (Need Monitor mode)                      
+          [6] Deauthenticate Network Devices
+          [7] Deauthenticate WiFi Router
         ----- Other Features -----  
-          [7] Switch Monitoring Channel  
-          [8] Change MAC Address *IMPORTANT*                  
+          [8] Change MAC Address             
           [9] About
           [0] Exit
         """)
@@ -189,15 +189,15 @@ if __name__ == "__main__":
             elif var == 2:
                 wifi_hacker.stop_monitor_mode()
             elif var == 3:
-                wifi_hacker.scan_network()
-            elif var == 4:
-                wifi_hacker.scan_devices()
-            elif var == 5:
-                wifi_hacker.deauth_devices()
-            elif var == 6:
-                wifi_hacker.deauth_router()
-            elif var == 7:
                 wifi_hacker.switch_channel()
+            elif var == 4:
+                wifi_hacker.scan_network()
+            elif var == 5:
+                wifi_hacker.scan_devices()
+            elif var == 6:
+                wifi_hacker.deauth_devices()
+            elif var == 7:
+                wifi_hacker.deauth_router()
             elif var == 8:
                 wifi_hacker.changemac()
             elif var == 9:
