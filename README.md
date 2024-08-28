@@ -1,7 +1,7 @@
 ![Project CS](https://github.com/Ice-Emperor03/Project_CometStrike/assets/128063701/53fc0e06-cbee-4c8e-b0d9-70f065a374b0)
 
 
-# CometStrike ☄️
+# Project CometStrike ☄️
 
 WARNING: Ethical Use of Project CometStrike
 Project CometStrike is a tool designed to automate WiFi Deauthentication attacks. Please note that unauthorized 
